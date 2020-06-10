@@ -38,7 +38,6 @@ matrix:
         apt:
           update: true
           packages:
-            - openjdk-11-jdk-headless
             - maven
       before_script:
         - echo $JVM_EXTRA_ARGS
