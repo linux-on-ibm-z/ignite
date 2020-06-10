@@ -31,20 +31,20 @@ matrix:
       arch: s390x
       dist: bionic
       install: skip
-      jdk: openjdk8
+      jdk: openjdk11
       env: 
         - MAVEN_OPTS="-Xms4096m -Xmx4096m"
       addons:
         apt:
           update: true
           packages:
-            - openjdk-8-jdk-headless
+            - openjdk-11-jdk-headless
             - maven
       before_script:
-        - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-s390x;
+        - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-s390x/;
           export PATH=$JAVA_HOME/bin:$PATH
         - echo $JVM_EXTRA_ARGS
-      script: travis_wait 30 mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
+      script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
       before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
       cache: {directories: [$HOME/.m2/repository]} 
      
