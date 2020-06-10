@@ -35,8 +35,6 @@ matrix:
       addons:
         apt:
           update: true
-          packages:
-            - maven
       before_script:
         - which java
         - echo $JVM_EXTRA_ARGS
