@@ -25,26 +25,7 @@ matrix:
       script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
       before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
       cache: {directories: [$HOME/.m2/repository]}
-
-    - language: java
-      os: linux
-      arch: s390x
-      dist: xenial
-      install: skip
-      jdk: openjdk8
-      env:
-        - MAVEN_OPTS="-Xms4096m -Xmx4096m"
-      addons:
-        apt:
-          update: true
-          packages:
-            - maven
-      before_script:
-        - echo $JVM_EXTRA_ARGS
-      script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
-      before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
-      cache: {directories: [$HOME/.m2/repository]}
-      
+     
     - language: java
       os: linux
       dist: trusty
