@@ -29,7 +29,7 @@ matrix:
     - language: java
       os: linux
       arch: s390x
-      dist: xenial
+      dist: bionic
       install: skip
       jdk: openjdk11
       addons:
