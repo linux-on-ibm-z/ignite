@@ -32,6 +32,8 @@ matrix:
       dist: xenial
       install: skip
       jdk: openjdk8
+      env:
+        - MAVEN_OPTS="-Xms4096m -Xmx4096m"
       addons:
         apt:
           update: true
