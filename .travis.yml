@@ -32,6 +32,11 @@ matrix:
       dist: xenial
       install: skip
       jdk: openjdk8
+      addons:
+        apt:
+          update: true
+          packages:
+            - maven
       before_script:
         - echo $JVM_EXTRA_ARGS
       script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
@@ -64,6 +69,11 @@ matrix:
       dist: xenial
       install: skip
       jdk: openjdk11
+      addons:
+        apt:
+          update: true
+          packages:
+            - maven
       before_script:
         - echo $JVM_EXTRA_ARGS
         - |
