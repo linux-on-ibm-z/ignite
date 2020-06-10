@@ -28,6 +28,19 @@ matrix:
      
     - language: java
       os: linux
+      arch: s390x
+      dist: trusty
+      install: skip
+      jdk: openjdk11
+      before_script:
+        - echo $JVM_EXTRA_ARGS
+      script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
+      before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
+      cache: {directories: [$HOME/.m2/repository]} 
+     
+     
+    - language: java
+      os: linux
       dist: trusty
       install: skip
       jdk: openjdk11
