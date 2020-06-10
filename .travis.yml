@@ -40,7 +40,8 @@ matrix:
             - maven
       before_script:
         - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-s390x/;
-          export PATH=$JAVA_HOME/bin:$PATH
+          export PATH=$JAVA_HOME/bin:$PATH;
+          export JAVA_OPTS="-Xms4096m -Xmx4096m"
         - echo $JVM_EXTRA_ARGS
       script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
       before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
