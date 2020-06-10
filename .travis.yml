@@ -31,7 +31,7 @@ matrix:
       arch: s390x
       dist: bionic
       install: skip
-      jdk: openjdk11
+      jdk: openjdk8
       addons:
         apt:
           update: true
