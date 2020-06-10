@@ -17,6 +17,9 @@ matrix:
   include:
     - language: java
       os: linux
+      arch:
+        - amd64
+        - s390x
       dist: trusty
       install: skip
       jdk: openjdk8
