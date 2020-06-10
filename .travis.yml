@@ -35,6 +35,8 @@ matrix:
       addons:
         apt:
           update: true
+          packages:
+            - openjdk8
       before_script:
         - which java
         - echo $JVM_EXTRA_ARGS
