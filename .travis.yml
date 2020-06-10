@@ -36,7 +36,7 @@ matrix:
         apt:
           update: true
           packages:
-            - openjdk8
+            - openjdk-8-jdk-headless
       before_script:
         - which java
         - echo $JVM_EXTRA_ARGS
