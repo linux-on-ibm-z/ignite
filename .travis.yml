@@ -29,7 +29,7 @@ matrix:
     - language: java
       os: linux
       arch: s390x
-      dist: bionic
+      dist: xenial
       install: skip
       jdk: openjdk8
       addons:
@@ -39,7 +39,7 @@ matrix:
             - maven
       before_script:
         - echo $JVM_EXTRA_ARGS
-      script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
+      script:  travis_wait 30 mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
       before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
       cache: {directories: [$HOME/.m2/repository]} 
      
