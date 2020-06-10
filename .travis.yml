@@ -41,8 +41,8 @@ matrix:
             - openjdk-11-jdk-headless
             - maven
       before_script:
-        - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-s390x/;
-          export PATH=$JAVA_HOME/bin:$PATH
+        - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-s390x;
+          export PATH=$JAVA_HOME/bin:$PATH;
         - echo $JVM_EXTRA_ARGS
       script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
       before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
