@@ -38,8 +38,6 @@ matrix:
           packages:
             - maven
       before_script:
-        - curl -fsSL https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u252-b09_openj9-0.20.0/OpenJDK8U-jdk_s390x_linux_openj9_8u252b09_openj9-0.20.0.tar.gz | tar xz;
-          export PATH="$PWD/jdk8u252-b09/bin:$PATH";
         - echo $JVM_EXTRA_ARGS
       script: mvn test-compile -Pall-java,licenses,lgpl,checkstyle,examples,all-scala,scala,check-licenses -Dmaven.javadoc.skip=true -B -V
       before_cache: rm -rfv $HOME/.m2/repository/org/apache/ignite
