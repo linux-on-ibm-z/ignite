@@ -36,7 +36,6 @@ matrix:
         apt:
           update: true
           packages:
-            - openjdk-8-jdk-headless
             - maven
       before_script:
         - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-s390x/;
